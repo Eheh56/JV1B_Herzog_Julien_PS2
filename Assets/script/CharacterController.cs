@@ -11,25 +11,24 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Gérer l'animation pour la touche "D"
         if (Input.GetKeyDown(KeyCode.D))
         {
-            // Déclenche l'animation "yvesavant"
             animator.SetBool("isMovingForward", true);
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
-            // Revient à l'animation "yvesnormal"
             animator.SetBool("isMovingForward", false);
         }
-        if(Input.GetKeyDown(KeyCode.Q))
+
+        // Gérer l'animation pour la touche "Q"
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            // Déclenche l'animation "yvesavant"
-            animator.SetBool("isMovingBack", true);
+            animator.SetBool("isMovingBackward", true);
         }
-        else if (Input.GetKeyUp(KeyCode.Q))
+        else if (Input.GetKeyUp(KeyCode.A))
         {
-            // Revient à l'animation "yvesnormal"
-            animator.SetBool("isMovingBack", false);
+            animator.SetBool("isMovingBackward", false);
         }
     }
 }
