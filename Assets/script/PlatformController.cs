@@ -7,6 +7,7 @@ public class PlatformController : MonoBehaviour
     public Transform posA, posB;
     public int Speed;
     Vector2 targetPos;
+    
     void Start()
     {
         targetPos = posB.position;
@@ -28,6 +29,7 @@ public class PlatformController : MonoBehaviour
             collision.transform.SetParent(this.transform);
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
