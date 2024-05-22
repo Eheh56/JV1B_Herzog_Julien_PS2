@@ -2039,7 +2039,7 @@ GameObject:
   - component: {fileID: 2093813569}
   - component: {fileID: 2093813568}
   - component: {fileID: 2093813572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2055,7 +2055,7 @@ Transform:
   m_GameObject: {fileID: 2093813566}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3785515, y: -1.1264958, z: 0.037638035}
+  m_LocalPosition: {x: 2.3785515, y: -1.143, z: 0.037638035}
   m_LocalScale: {x: 1.7031, y: 0.3709, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2229,10 +2229,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.48}
+  m_Offset: {x: 0, y: 0.33}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2243,7 +2243,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.91, y: 0.24}
+  m_Size: {x: 0.91, y: 1.05}
   m_EdgeRadius: 0
 --- !u!1 &2113177111
 GameObject:
@@ -2259,7 +2259,7 @@ GameObject:
   - component: {fileID: 2113177114}
   - component: {fileID: 2113177113}
   - component: {fileID: 2113177112}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Falling Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
