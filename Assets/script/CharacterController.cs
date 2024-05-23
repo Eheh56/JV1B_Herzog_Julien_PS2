@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     {
 
         animator.SetBool("isMovingForward", rb.velocity.x != 0);
-        if(rb.velocity.x > 0) { GetComponent<Transform>().localScale = new Vector2(1, 1);}
-        else if(rb.velocity.x < 0) { GetComponent<Transform>().localScale = new Vector2(-1, 1);}
+        if(Input.GetAxisRaw("Horizontal") > 0) { GetComponent<Transform>().localScale = new Vector2(1, 1);}
+        else if(Input.GetAxisRaw("Horizontal") < 0) { GetComponent<Transform>().localScale = new Vector2(-1, 1);}
     }
 }

@@ -7,7 +7,10 @@ public class PlatformController : MonoBehaviour
     public Transform posA, posB;
     public int Speed;
     Vector2 targetPos;
-    
+    public GameObject child; // Le GameObject enfant
+    public GameObject parent; // Le GameObject parent
+    private ParentingController parentingController;
+
     void Start()
     {
         targetPos = posB.position;
@@ -20,6 +23,7 @@ public class PlatformController : MonoBehaviour
         if (Vector2.Distance(transform.position, posB.position) < .1f) targetPos = posA.position;
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, Speed * Time.deltaTime);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +32,7 @@ public class PlatformController : MonoBehaviour
         {
             collision.transform.SetParent(this.transform);
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -35,6 +40,7 @@ public class PlatformController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.transform.SetParent(null);
+
         }
     }
 
