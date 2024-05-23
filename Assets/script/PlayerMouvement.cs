@@ -8,8 +8,7 @@ public class PlayerMouvement : MonoBehaviour
     public float jumpForce = 10f; // Force du saut
     public int maxJumps = 2; // Nombre maximum de sauts
     private int jumpsRemaining; // Nombre de sauts restants
-
-    private Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
     private bool isGrounded;
 
     public Transform groundCheck; // Référence à un objet vide placé sous les pieds du personnage

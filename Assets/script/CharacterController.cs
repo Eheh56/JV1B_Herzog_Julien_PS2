@@ -3,32 +3,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Animator animator;
-
+    private Rigidbody2D rb;
+    public Sprite devant;
+    public Sprite derriere;
     void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        // Gérer l'animation pour la touche "D"
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            animator.SetBool("isMovingForward", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.D))
-        {
-            animator.SetBool("isMovingForward", false);
-        }
 
-        // Gérer l'animation pour la touche "Q"
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            animator.SetBool("isMovingBackward", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.A))
-        {
-            animator.SetBool("isMovingBackward", false);
-        }
+        animator.SetBool("isMovingForward", rb.velocity.x != 0);
+        if(rb.velocity.x > 0) { GetComponent<Transform>().localScale = new Vector2(1, 1);}
+        else if(rb.velocity.x < 0) { GetComponent<Transform>().localScale = new Vector2(-1, 1);}
     }
 }
