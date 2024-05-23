@@ -17,7 +17,7 @@ public class CollectibleHandler : MonoBehaviour
             isCollected = true;
             animator.SetTrigger("StartCollected");
             // Désactiver le collectable après l'animation
-            Invoke("DisableCollectible", 3.0f); // Remplacer 1.0f par la durée réelle de l'animation "luther"
+            Invoke("DisableCollectible", 1.7f); // Remplacer 1.0f par la durée réelle de l'animation "luther"
         }
     }
 
