@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     {
 
         animator.SetBool("isMovingForward", rb.velocity.x != 0);
-        if(Input.GetAxisRaw("Horizontal") > 0) { GetComponent<Transform>().localScale = new Vector2(1, 1);}
-        else if(Input.GetAxisRaw("Horizontal") < 0) { GetComponent<Transform>().localScale = new Vector2(-1, 1);}
-    }
+        if(Input.GetAxis("Horizontal") > 0) { GetComponent<Transform>().localScale = new Vector2(1, 1);}
+        else if(Input.GetAxis("Horizontal") < 0) { GetComponent<Transform>().localScale = new Vector2(-1, 1);}    }
 }
