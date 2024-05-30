@@ -3,12 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class reset : MonoBehaviour
 {
-    void Die(GameObject player)
+    // Cette méthode sera appelée lorsque le bouton sera cliqué
+    public void ResetScene()
     {
-        Debug.Log("Player is dead!");
-        // Logique de mort, par exemple recharger la scène
+        // Recharge la scène active
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        // Alternativement, tu peux désactiver le joueur ou autres objets
-        // player.SetActive(false);
     }
 }
