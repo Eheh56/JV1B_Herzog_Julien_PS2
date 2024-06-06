@@ -454,13 +454,14 @@ GameObject:
   - component: {fileID: 96503178}
   - component: {fileID: 96503180}
   - component: {fileID: 96503179}
+  - component: {fileID: 96503181}
   m_Layer: 5
   m_Name: Dialogue Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &96503178
 RectTransform:
   m_ObjectHideFlags: 0
@@ -521,6 +522,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96503177}
   m_CullTransparentMesh: 1
+--- !u!95 &96503181
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96503177}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 859489520ef155f42a4a9275b67402f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &147313376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1174,8 @@ GameObject:
   - component: {fileID: 299344497}
   - component: {fileID: 299344496}
   - component: {fileID: 299344495}
+  - component: {fileID: 299344499}
+  - component: {fileID: 299344498}
   m_Layer: 0
   m_Name: feu de camp_0
   m_TagString: Untagged
@@ -1247,6 +1271,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &299344498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299344494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaff6b17b2c78e646bf11c86a0a757a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: lvl1
+  playerIsClose: 0
+--- !u!61 &299344499
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299344494}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.52, y: 0.52}
+  m_EdgeRadius: 0
 --- !u!1 &314732498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1623,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.07058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9933,8 +10016,6 @@ GameObject:
   - component: {fileID: 1138869406}
   - component: {fileID: 1138869405}
   - component: {fileID: 1138869409}
-  - component: {fileID: 1138869408}
-  - component: {fileID: 1138869410}
   - component: {fileID: 1138869411}
   m_Layer: 0
   m_Name: SEVY
@@ -10031,18 +10112,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1138869408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138869404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a17633abde09f6449f26ef60a3907a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1138869409
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10088,18 +10157,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &1138869410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138869404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 324147d3063cae84c90d2ba0969a8ad6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1138869411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10115,12 +10172,14 @@ MonoBehaviour:
   dialoguePanel: {fileID: 96503177}
   dialogueText: {fileID: 1873837578}
   dialogue:
-  - hi
-  - hello
+  - Bonjour yves, comment vas tu ?
+  - Ou suis je ?
   - bite
   cont_Button: {fileID: 1686558342}
   wordSpeed: 0.06
   playerIsClose: 0
+  animator: {fileID: 96503181}
+  animationName: dialogue monte
 --- !u!1 &1149922782
 GameObject:
   m_ObjectHideFlags: 0
@@ -11719,8 +11778,6 @@ GameObject:
   - component: {fileID: 1889272514}
   - component: {fileID: 1889272513}
   - component: {fileID: 1889272512}
-  - component: {fileID: 1889272521}
-  - component: {fileID: 1889272520}
   m_Layer: 0
   m_Name: Yves
   m_TagString: Player
@@ -11936,30 +11993,6 @@ Transform:
   - {fileID: 1043091502}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1889272520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889272510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331ffe0de4c30364180ffcbc44a59e53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1889272521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889272510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 324147d3063cae84c90d2ba0969a8ad6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1920168651
 GameObject:
   m_ObjectHideFlags: 0
@@ -12065,7 +12098,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.07058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12741,7 +12774,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.07058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
