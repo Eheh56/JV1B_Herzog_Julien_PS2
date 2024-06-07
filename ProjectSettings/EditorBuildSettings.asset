@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lvl2.unity
     guid: 167d07c2da2e62741b08d1f0aeffd71b
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: efc93013fc6fccf439e17236f01aa17b
   m_configObjects: {}

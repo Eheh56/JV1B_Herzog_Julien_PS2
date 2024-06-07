@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
-    public GameObject dialoguePanel;
+    public List<GameObject> dialoguePanels; // Liste des panels de dialogue
     public Text dialogueText;
     public string[] dialogue;
     private int index;
@@ -17,18 +17,20 @@ public class NPC : MonoBehaviour
     public Animator animator; // Ajout de la référence à l'Animator
     public string animationName = "dialogue monte"; // Nom de l'animation à jouer
 
+    private int currentPanelIndex; // Index du panel de dialogue actuellement actif
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
         {
-            if (dialoguePanel.activeInHierarchy)
+            if (dialoguePanels[currentPanelIndex].activeInHierarchy)
             {
                 zeroText();
             }
             else
             {
-                dialoguePanel.SetActive(true);
+                dialoguePanels[currentPanelIndex].SetActive(true);
                 StartCoroutine(Typing());
                 PlayAnimation();
             }
@@ -44,7 +46,7 @@ public class NPC : MonoBehaviour
     {
         dialogueText.text = "";
         index = 0;
-        dialoguePanel.SetActive(false);
+        dialoguePanels[currentPanelIndex].SetActive(false);
     }
 
     IEnumerator Typing()
@@ -93,6 +95,17 @@ public class NPC : MonoBehaviour
         if (animator != null)
         {
             animator.Play(animationName);
+        }
+    }
+
+    // Nouvelle méthode pour changer le panel de dialogue actif
+    public void SetDialoguePanel(int panelIndex)
+    {
+        if (panelIndex >= 0 && panelIndex < dialoguePanels.Count)
+        {
+            dialoguePanels[currentPanelIndex].SetActive(false); // Désactiver le panel actuel
+            currentPanelIndex = panelIndex; // Changer l'index
+            dialogueText = dialoguePanels[currentPanelIndex].GetComponentInChildren<Text>(); // Mettre à jour le texte de dialogue
         }
     }
 }
