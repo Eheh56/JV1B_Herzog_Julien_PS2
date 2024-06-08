@@ -6,7 +6,7 @@ public class LifeManager : MonoBehaviour
 {
     public TextMeshProUGUI livesText;
     private static int deathCount = 0;  // Variable statique pour conserver le compteur de morts
-    private const int maxDeaths = 10;
+    private const int maxDeaths = 15;
     private static LifeManager instance;
 
     void Awake()
@@ -39,6 +39,7 @@ public class LifeManager : MonoBehaviour
         // Initialiser l'affichage des vies
         UpdateLivesText();
     }
+
     private void UpdateLivesText()
     {
         if (livesText != null)
@@ -50,6 +51,7 @@ public class LifeManager : MonoBehaviour
             Debug.LogError("LivesText is not assigned in the inspector.");
         }
     }
+
     public void PlayerDead()
     {
         deathCount++;
@@ -67,8 +69,8 @@ public class LifeManager : MonoBehaviour
             // Réinitialiser le niveau
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
     }
+
     public void PlayerDied()
     {
         deathCount++;
@@ -85,7 +87,6 @@ public class LifeManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-
 
     // Autres méthodes du script...
 }
