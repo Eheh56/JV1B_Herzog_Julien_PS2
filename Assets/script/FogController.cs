@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FogController: MonoBehaviour
+public class FogController : MonoBehaviour
 {
     public Transform posA, posB;
     public int Speed;
     Vector2 targetPos;
+    private bool canMove = true; // Variable pour indiquer si le brouillard peut se déplacer
 
     void Start()
     {
@@ -15,18 +14,18 @@ public class FogController: MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, posA.position) < .1f) targetPos = posB.position;
+        if (canMove)
+        {
+            if (Vector2.Distance(transform.position, posA.position) < .1f) targetPos = posB.position;
 
-        if (Vector2.Distance(transform.position, posB.position) < .1f) targetPos = posA.position;
+            if (Vector2.Distance(transform.position, posB.position) < .1f) targetPos = posA.position;
 
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, Speed * Time.deltaTime);
-
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, Speed * Time.deltaTime);
+        }
     }
 
-
-    private void OnDrawGizmos()
+    public void StopMovement()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(posA.position, posB.position);
+        canMove = false;
     }
 }
