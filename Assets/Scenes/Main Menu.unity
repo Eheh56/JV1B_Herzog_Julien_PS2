@@ -362,7 +362,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00000027287, y: 0, z: 0}
-  m_LocalScale: {x: 9.3, y: 9.3, z: 9.3}
+  m_LocalScale: {x: 3.21408, y: 3.21408, z: 3.21408}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -500,14 +500,14 @@ RectTransform:
   m_GameObject: {fileID: 1468575483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 0.672925, y: 0.672925, z: 0.3364625}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1383624584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.7914, y: 139.47926}
+  m_AnchoredPosition: {x: 3.0000181, y: 48}
   m_SizeDelta: {x: 260.533, y: 87.2469}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468575485
@@ -519,10 +519,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1468575483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3c87041c58a4554bb9ce5bedffba4ef, type: 3}
+  m_Script: {fileID: 11500000, guid: f4367d4c376d64b43b88e4ace23cbc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: lvl apprentissage
 --- !u!114 &1468575486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,15 +567,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1468575485}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 1
+        m_TargetAssemblyTypeName: SceneManage, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: lvl1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1468575487
@@ -629,6 +628,7 @@ GameObject:
   - component: {fileID: 1627042014}
   - component: {fileID: 1627042013}
   - component: {fileID: 1627042012}
+  - component: {fileID: 1627042015}
   m_Layer: 5
   m_Name: exit
   m_TagString: Untagged
@@ -645,14 +645,14 @@ RectTransform:
   m_GameObject: {fileID: 1627042010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 0.69192, y: 0.69192, z: 0.34596}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1383624584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 558.7614, y: 139.73753}
+  m_AnchoredPosition: {x: 195, y: 49}
   m_SizeDelta: {x: 93.0399, y: 170.5094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1627042012
@@ -698,7 +698,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1627042013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1627042015}
+        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1627042013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,6 +749,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627042010}
   m_CullTransparentMesh: 1
+--- !u!114 &1627042015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627042010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c63797a5084fb46980eddfca675811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1877923972
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,14 +790,14 @@ RectTransform:
   m_GameObject: {fileID: 1877923972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 0.672925, y: 0.672925, z: 0.3364625}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1383624584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.7914, y: -33.999985}
+  m_AnchoredPosition: {x: 3, y: -14}
   m_SizeDelta: {x: 260.533, y: 87.2469}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877923974
@@ -821,15 +845,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1877923977}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 1
+        m_TargetAssemblyTypeName: SceneManage, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: OPTION
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1877923975
@@ -879,10 +903,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1877923972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3c87041c58a4554bb9ce5bedffba4ef, type: 3}
+  m_Script: {fileID: 11500000, guid: f4367d4c376d64b43b88e4ace23cbc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: OPTION
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
